@@ -8,6 +8,6 @@ _ Rocio Lucero
 _ Mulinetti Delfina
 _ Mandile Guido
 _ Mendoza Dolores
-_ Martinez Trejo Gonzalo
+_ Martinez Trejo Gustavo
 _ Aymar Stefano
 _ Zanatta Hugo
