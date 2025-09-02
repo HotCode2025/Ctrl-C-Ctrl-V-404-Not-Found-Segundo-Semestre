@@ -17,6 +17,7 @@ def cajero():
     saldo = 1000  # saldo inicial
     opcion = 0
     saldo_final = 0
+
     while opcion != 4:
         menu()
         opcion = int(input("Seleccione una opción: "))
@@ -27,10 +28,10 @@ def cajero():
             print(f"Se ingresaron ${aporte}. Saldo actual: ${saldo_final}")
         elif opcion == 2:
             retiro = int(input("Importe a retirar: "))
-            if retiro > saldo:
+            if retiro > saldo_final:
                 print("Fondos insuficientes.")
             else:
-                saldo_final = saldo - retiro
+                saldo_final = saldo_final - retiro
                 print(f"Se retiraron ${retiro}. Saldo actual: ${saldo_final}")
         elif opcion == 3:
             print(f"Saldo disponible: ${saldo_final}")
@@ -41,3 +42,4 @@ def cajero():
 
 
 cajero()
+
