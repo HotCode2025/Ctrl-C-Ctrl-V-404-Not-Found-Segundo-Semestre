@@ -21,8 +21,3 @@ def main():
     print(f"Frase original: '{frase}'")
     print(f"Frase final: {frase_final}")
     print(f"N° de caracteres (sin espacios): {cantidad}")
-
-
-# Ejecutar el programa
-if __name__ == "__main__":
-    main()
