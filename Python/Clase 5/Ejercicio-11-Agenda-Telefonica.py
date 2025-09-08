@@ -75,6 +75,5 @@ def agenda_telefonica():
         else:
             print("Error: Opción no válida. Por favor elija 1-4.")
 
-# Ejecutar el programa
-if __name__ == "__main__":
+
     agenda_telefonica()
