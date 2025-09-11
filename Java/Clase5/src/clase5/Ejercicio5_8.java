@@ -3,13 +3,13 @@ Ejercicio 9: Pedir el día, mes y año de una fecha e
 indicar si la fecha es correcta. Suponiendo que
 todos los meses son de 30 días
  */
-package Clase5Ejercicio02;
+package clase5;
 
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class Clase5Ejercicio02 {
+public class Ejercicio5_8 {
     public static void main(String[] args) {
         try (Scanner entrada = new Scanner(System.in)) {
             String modo, opcion;
@@ -59,10 +59,7 @@ public class Clase5Ejercicio02 {
                 } else {
                     opcion = JOptionPane.showInputDialog("¿Desea ingresar otra fecha? (s/n):");
                 }
-                
             } while (opcion.equalsIgnoreCase("s"));
         }
-        System.out.println("Programa finalizado.");
     }
 }
-

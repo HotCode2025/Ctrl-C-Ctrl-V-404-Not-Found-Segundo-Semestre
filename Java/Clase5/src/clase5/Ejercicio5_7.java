@@ -4,7 +4,7 @@ package clase5;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class Clase5 {
+public class Ejercicio5_7 {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
