@@ -1,0 +1,69 @@
+/*
+Ejercicio 9: Pedir el día, mes y año de una fecha e 
+indicar si la fecha es correcta. Suponiendo que
+todos los meses son de 30 días
+ */
+package Clase5Ejercicio02;
+
+import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+public class Clase5Ejercicio02 {
+    public static void main(String[] args) {
+        try (Scanner entrada = new Scanner(System.in)) {
+            String modo, opcion;
+            // Elegir modo de ingreso
+            do {
+                modo = JOptionPane.showInputDialog(
+                        "Seleccione el modo de ingreso de datos:\n1 = Consola\n2 = Ventanas");
+            } while (!modo.equals("1") && !modo.equals("2"));
+            do {
+                int dia = 0, mes = 0, anio = 0;
+                
+                if (modo.equals("1")) {
+                    // Entrada por consola
+                    System.out.print("Ingrese el día: ");
+                    dia = entrada.nextInt();
+                    
+                    System.out.print("Ingrese el mes: ");
+                    mes = entrada.nextInt();
+                    
+                    System.out.print("Ingrese el año: ");
+                    anio = entrada.nextInt();
+                } else {
+                    // Entrada por ventanas
+                    dia = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el día:"));
+                    mes = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el mes:"));
+                    anio = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el año:"));
+                }
+                
+                // Validación de fecha
+                String mensaje;
+                if (dia >= 1 && dia <= 30 && mes >= 1 && mes <= 12 && anio != 0) {
+                    mensaje = "La fecha " + dia + "/" + mes + "/" + anio + " es correcta.";
+                } else {
+                    mensaje = "La fecha ingresada no es válida.";
+                }
+                
+                // Mostramos resultado en ventana al frente
+                JFrame frame = new JFrame();
+                frame.setAlwaysOnTop(true);
+                frame.setVisible(false);
+                JOptionPane.showMessageDialog(frame, mensaje, "Resultado", JOptionPane.INFORMATION_MESSAGE);
+                
+                // Preguntamos si quiere ingresar otra fecha
+                if (modo.equals("1")) {
+                    System.out.print("¿Desea ingresar otra fecha? (s/n): ");
+                    opcion = entrada.next();
+                } else {
+                    opcion = JOptionPane.showInputDialog("¿Desea ingresar otra fecha? (s/n):");
+                }
+                
+            } while (opcion.equalsIgnoreCase("s"));
+        }
+        System.out.println("Programa finalizado.");
+    }
+}
+
+
