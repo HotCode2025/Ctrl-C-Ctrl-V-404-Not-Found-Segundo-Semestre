@@ -3,14 +3,12 @@ class Producto {
     
     static contadorProductos = 0;
 
-    
     constructor(nombre, precio) {
         this._idProducto = ++Producto.contadorProductos;
         this._nombre = nombre;
         this._precio = precio;
     }
 
-    
     get idProducto() {
         return this._idProducto;
     }
@@ -41,14 +39,11 @@ class Producto {
 class Orden {
     
     static contadorOrdenes = 0;
-    static get MAX_PRODUCTOS() {
-        return 5;
-    }
+    static  MAX_PRODUCTOS = 5;
 
     constructor() {
         this._idOrden = ++Orden.contadorOrdenes;
         this._productos = []; 
-       
     }
 
     get idOrden() {
@@ -87,9 +82,14 @@ class Orden {
 }
 
 
+//Ventas Test
 
 let producto1 = new Producto('Pantalón', 200);
 let producto2 = new Producto('Camisa', 100);
+let producto3 = new Producto('Cinturón', 50);
+let producto4 = new Producto('Zapatos', 300);
+let producto5 = new Producto('Medias', 80);
+let producto6 = new Producto('Gorra', 40);
 
 
 let orden1 = new Orden();
@@ -97,6 +97,10 @@ let orden1 = new Orden();
 
 orden1.agregarProducto(producto1);
 orden1.agregarProducto(producto2);
+orden1.agregarProducto(producto3);
+orden1.agregarProducto(producto4);
+orden1.agregarProducto(producto5);
+orden1.agregarProducto(producto6);
 
 
 orden1.mostrarOrden(); 
