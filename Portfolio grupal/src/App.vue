@@ -1,14 +1,14 @@
 <template>
   <div id="portfolio-app">
     <NavBar />
-
+<Technologies />
 <!--     <HeroSection />
 
     <AboutUs />
 
     <TeamMembers />
     
-    <Technologies />
+    
     
     <Projects />
     
@@ -23,10 +23,11 @@
 <script>
 
 import NavBar from './components/NavBar.vue'
+import Technologies from './components/Technologies.vue'
 /* import HeroSection from './components/HeroSection.vue'
 import AboutUs from './components/AboutUs.vue'
 import TeamMembers from './components/TeamMembers.vue'
-import Technologies from './components/Technologies.vue'
+
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
 import ContactInfo from './components/ContactInfo.vue'
