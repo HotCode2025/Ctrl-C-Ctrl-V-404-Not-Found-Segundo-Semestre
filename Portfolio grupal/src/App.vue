@@ -14,9 +14,9 @@
     
     <Skills />
     
-    <ContactInfo />
+    <ContactInfo /> -->
     
-    <FooterSection /> -->
+    <FooterSection />
   </div>
 </template>
 
@@ -30,9 +30,9 @@ import TeamMembers from './components/TeamMembers.vue'
 
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
-import ContactInfo from './components/ContactInfo.vue'
-import FooterSection from './components/FooterSection.vue'  */
+import ContactInfo from './components/ContactInfo.vue' */
 
+import FooterSection from './components/FooterSection.vue' 
 export default {
   name: 'App',
   components: {
@@ -43,8 +43,8 @@ export default {
     Technologies,
     Projects,
     Skills,
-    ContactInfo,
-    FooterSection */
+    ContactInfo, */
+    FooterSection 
   }
 }
 </script>
