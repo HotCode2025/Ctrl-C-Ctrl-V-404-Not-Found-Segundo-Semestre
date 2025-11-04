@@ -1,10 +1,10 @@
 <template>
   <div id="portfolio-app">
     <NavBar />
-    <Technologies />
-    <!--     <HeroSection />
 
-    <AboutUs />
+    <HeroSection />
+
+<!--        <AboutUs />
 
     <TeamMembers />
     
@@ -23,10 +23,10 @@
 </template>
 
 <script>
-import NavBar from "./components/NavBar.vue";
-import Technologies from "./components/Technologies.vue";
-/* import HeroSection from './components/HeroSection.vue'
-import AboutUs from './components/AboutUs.vue'
+
+import NavBar from './components/NavBar.vue'
+import HeroSection from './components/HeroSection.vue'
+/* import AboutUs from './components/AboutUs.vue'
 import TeamMembers from './components/TeamMembers.vue'
 
 import Projects from './components/Projects.vue'
@@ -38,8 +38,8 @@ export default {
   name: "App",
   components: {
     NavBar,
-    /*     HeroSection,
-    AboutUs,
+    HeroSection,
+  /*   AboutUs,
     TeamMembers,
     Projects,
     Skills,
