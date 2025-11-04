@@ -13,7 +13,6 @@ Este proyecto es un portfolio grupal realizado por estudiantes de la Tecnicatura
 - Aymar Stéfano
 - Capitani Santiago
 - Lucero Rocio
-- Mandile Guido
 - Martinez Trejo Gustavo
 - Mendoza Dolores
 - Mulinetti Delfina
