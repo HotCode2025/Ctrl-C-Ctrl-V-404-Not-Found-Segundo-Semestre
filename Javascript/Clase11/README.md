@@ -1,5 +1,7 @@
 # Clase 11 – Funciones descriptivas en JavaScript
 
+__Grupo Ctrl + C Ctrl + V = 404 not found__ 
+
 ---
 
 ## Manipulación de datos
