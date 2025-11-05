@@ -2,50 +2,53 @@
   <div id="portfolio-app">
     <NavBar />
 
-<!--     <HeroSection />
+    <HeroSection />
 
-    <AboutUs />
+<!--        <AboutUs />
 
     <TeamMembers />
     
-    <Technologies />
+    
     
     <Projects />
     
     <Skills />
     
+     -->
+
     <ContactInfo />
-    
-    <FooterSection /> -->
+
+    <FooterSection />
   </div>
 </template>
 
 <script>
 
 import NavBar from './components/NavBar.vue'
-/* import HeroSection from './components/HeroSection.vue'
-import AboutUs from './components/AboutUs.vue'
+import HeroSection from './components/HeroSection.vue'
+/* import AboutUs from './components/AboutUs.vue'
 import TeamMembers from './components/TeamMembers.vue'
-import Technologies from './components/Technologies.vue'
+
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
+ */
 import ContactInfo from './components/ContactInfo.vue'
-import FooterSection from './components/FooterSection.vue'  */
-
+import FooterSection from "./components/FooterSection.vue";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     NavBar,
-/*     HeroSection,
-    AboutUs,
+    HeroSection,
+  /*   AboutUs,
     TeamMembers,
-    Technologies,
     Projects,
     Skills,
+     */
+    Technologies,
     ContactInfo,
-    FooterSection */
-  }
-}
+    FooterSection,
+  },
+};
 </script>
 
 <style scoped>
