@@ -4,11 +4,11 @@
 
     <HeroSection />
 
-        <AboutUs />
+    <AboutUs />
 
     <TeamMembers />
     
-    
+    <!-- <Technologies /> --> 
     
     <Projects />
     
@@ -28,8 +28,8 @@ import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutUs from './components/AboutUs.vue'
 import Technologies from './components/Technologies.vue'
-/*import TeamMembers from './components/TeamMembers.vue'
-import Projects from './components/Projects.vue'
+import TeamMembers from './components/TeamMembers.vue'
+/* import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
  */
 import ContactInfo from './components/ContactInfo.vue'
@@ -40,8 +40,8 @@ export default {
     NavBar,
     HeroSection,
     AboutUs,
-    /*TeamMembers,
-    Projects,
+    TeamMembers,
+    /*Projects,
     Skills,
      */
     Technologies,
