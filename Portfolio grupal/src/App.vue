@@ -4,7 +4,7 @@
 
     <HeroSection />
 
-<!--        <AboutUs />
+        <AboutUs />
 
     <TeamMembers />
     
@@ -14,7 +14,7 @@
     
     <Skills />
     
-     -->
+    
 
     <ContactInfo />
 
@@ -26,9 +26,9 @@
 
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
-/* import AboutUs from './components/AboutUs.vue'
-import TeamMembers from './components/TeamMembers.vue'
-
+import AboutUs from './components/AboutUs.vue'
+import Technologies from './components/Technologies.vue'
+/*import TeamMembers from './components/TeamMembers.vue'
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
  */
@@ -39,8 +39,8 @@ export default {
   components: {
     NavBar,
     HeroSection,
-  /*   AboutUs,
-    TeamMembers,
+    AboutUs,
+    /*TeamMembers,
     Projects,
     Skills,
      */
