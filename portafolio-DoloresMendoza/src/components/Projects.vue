@@ -1,5 +1,5 @@
 <template>
-  <section class="projects-section">
+  <section class="projects-section" id="proyectos">
     <h2 class="title">Mis Proyectos Destacados</h2>
     <div class="project-list">
       
@@ -13,6 +13,7 @@
           <span class="tech-badge">Vite</span>
           <span class="tech-badge">CSS</span>
         </div>
+        <a href="https://github.com/HotCode2025/Ctrl-C-Ctrl-V-404-Not-Found-Segundo-Semestre" target="_blank" class="project-link">Ver en GitHub</a>
       </div>
       
       <div class="project-card">
@@ -24,9 +25,10 @@
           <span class="tech-badge">Java</span>
           <span class="tech-badge">POO</span>
         </div>
+        <a href="#URL_REPOSITORIO_JAVA" target="_blank" class="project-link">Ver en GitHub (Pendiente)</a>
       </div>
 
-    </div>
+      </div>
   </section>
 </template>
 
@@ -35,7 +37,6 @@
 </script>
 
 <style scoped>
-/* Pega el CSS que usaste en tu Projects.vue anterior para mantener el estilo */
 .projects-section {
     padding: 3rem 1.5rem;
     background-color: #f4f4f9;
@@ -43,7 +44,7 @@
 }
 .title {
     font-size: 2.5rem;
-    color: #2c3e50;
+    color: #7a54eb;
     margin-bottom: 2rem;
 }
 .project-list {
@@ -62,20 +63,30 @@
 }
 .project-title {
     font-size: 1.5rem;
-    color: #3498db;
+    color: #b75ef3;
     margin-bottom: 10px;
 }
 .project-description {
-    color: #7f8c8d;
+    color: #ae47e1;
     margin-bottom: 15px;
 }
 .tech-badge {
     display: inline-block;
     background-color: #ecf0f1;
-    color: #2c3e50;
+    color: #a050d2;
     padding: 5px 10px;
     border-radius: 5px;
     margin-right: 5px;
     font-size: 0.8rem;
+}
+.project-link {
+    display: block;
+    margin-top: 10px;
+    color: #9362e8;
+    text-decoration: none;
+    font-weight: bold;
+}
+.project-link:hover {
+    text-decoration: underline;
 }
 </style>

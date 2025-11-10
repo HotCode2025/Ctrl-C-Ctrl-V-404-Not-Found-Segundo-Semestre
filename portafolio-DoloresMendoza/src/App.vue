@@ -1,14 +1,16 @@
 <script setup>
 import Header from './components/Header.vue'
-import AboutMe from './components/AboutMe.vue' // <-- Importación del nuevo componente
-import Projects from './components/Projects.vue' 
+import AboutMe from './components/AboutMe.vue'
+import Skills from './components/Skills.vue' // <-- Nuevo
+import Projects from './components/Projects.vue'
 </script>
 
 <template>
   <div id="portfolio-app">
     <Header />
     <main>
-      <AboutMe />  <Projects /> 
+      <AboutMe />
+      <Skills />    <Projects />
       </main>
   </div>
 </template>
@@ -19,7 +21,7 @@ import Projects from './components/Projects.vue'
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #7352bf;
+  color: #2c3e50;
 }
 body {
   margin: 0;

@@ -1,9 +1,13 @@
+<script setup>
+// Asumimos que la foto está en la carpeta /public
+</script>
+
 <template>
   <section class="about-me-section">
     <div class="content-wrapper">
       <div class="text-content">
         <h1 class="main-title">Dolores Mendoza</h1>
-        <h2 class="subtitle">Desarrolladora en Formación | Segundo Semestre</h2>
+        <h2 class="subtitle">Programadora en Formación | Segundo Semestre</h2>
         
         <p class="paragraph">
           ¡Hola! Soy Dolores, una estudiante apasionada por el desarrollo web y la programación. Actualmente me enfoco en consolidar mis habilidades en el stack Vue.js y la lógica de programación orientada a objetos (POO).
@@ -14,27 +18,25 @@
         </p>
         
         <div class="contact-buttons">
-          <a href="mailto:tu-correo@ejemplo.com" class="btn primary">Contáctame</a>
-          <a href="#" class="btn secondary">Ver mi CV</a>
+          <a href="mailto:mariadoloresmendoza159@gmail.com" class="btn primary">Contáctame</a>
+          <a href="/CV_Maria_Dolores_Mendoza.pdf" class="btn secondary" target="_blank">Ver mi CV</a>
         </div>
+        
       </div>
-      
+
       <div class="profile-image">
-        <img src="https://via.placeholder.com/300" alt="Foto de perfil de Dolores Mendoza" />
+        <img src="/myphoto.jpg" alt="Foto de perfil de Dolores Mendoza" />
       </div>
+
     </div>
   </section>
 </template>
-
-<script setup>
-// No se necesita lógica JavaScript por ahora
-</script>
 
 <style scoped>
 .about-me-section {
     padding: 4rem 2rem;
     background-color: #ffffff;
-    color: #2c3e50;
+    color: #8f70d0;
 }
 .content-wrapper {
     display: flex;
@@ -50,11 +52,11 @@
 .main-title {
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
-    color: #3498db;
+    color: #521dbc;
 }
 .subtitle {
     font-size: 1.5rem;
-    color: #7f8c8d;
+    color: #1a0d45;
     margin-bottom: 1.5rem;
 }
 .paragraph {
@@ -82,15 +84,15 @@
     transition: background-color 0.3s;
 }
 .btn.primary {
-    background-color: #3498db;
+    background-color: #8650dc;
     color: white;
 }
 .btn.primary:hover {
-    background-color: #2980b9;
+    background-color: #714ad4;
 }
 .btn.secondary {
     background-color: #ecf0f1;
-    color: #2c3e50;
+    color: #481480;
     border: 1px solid #7f8c8d;
 }
 .btn.secondary:hover {
