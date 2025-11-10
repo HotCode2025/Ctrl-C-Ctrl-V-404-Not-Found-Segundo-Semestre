@@ -1,25 +1,25 @@
 <script setup>
 import Header from './components/Header.vue'
-import Projects from './components/Projects.vue'
-// Aquí puedes importar más componentes (Sobre Mí, Habilidades, Contacto)
+import AboutMe from './components/AboutMe.vue' // <-- Importación del nuevo componente
+import Projects from './components/Projects.vue' 
 </script>
 
 <template>
   <div id="portfolio-app">
     <Header />
     <main>
-      <Projects />
+      <AboutMe />  <Projects /> 
       </main>
   </div>
 </template>
 
 <style>
-/* Estilos globales para la aplicación */
+/* Estilos globales */
 #portfolio-app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #7352bf;
 }
 body {
   margin: 0;
