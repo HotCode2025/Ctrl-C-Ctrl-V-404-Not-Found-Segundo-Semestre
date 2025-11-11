@@ -1,7 +1,9 @@
 from ClaseHijaCuadrado import Cuadrado
 from ClaseHijaRectangulo import Rectangulo
 
-cuadrado1 = Cuadrado(5, "Rojo")
+print("Creación de la clase Cuadrado".center(50, "-"))
+cuadrado1 = Cuadrado(8, "Rojo")
+cuadrado1.ancho = -10
 print(cuadrado1.ancho)
 print(cuadrado1.alto)
 print(f'Calculo el área del cuadrado: {cuadrado1.calcular_area()}')
@@ -11,6 +13,8 @@ print(f'Calculo el área del cuadrado: {cuadrado1.calcular_area()}')
 print(Cuadrado.mro())  # Muestra el orden de resolución de métodos para la clase Cuadrado
 print(cuadrado1)  # Llama al método __str__ de la clase Cuadrado
 
-rectangulo1 = Rectangulo(4, 6, "Azul")
+print("Creación de la clase Rectángulo".center(50, "-"))
+rectangulo1 = Rectangulo(3, 9, "Azul")
+rectangulo1.ancho = 15
 print(f'Calculo el área del rectángulo: {rectangulo1.calcular_area()}')
 print(rectangulo1)  # Llama al método __str__ de la clase Rectangulo
