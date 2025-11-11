@@ -14,7 +14,7 @@
         >
           <div class="card-inner">
             <div class="avatar" :style="{ background: member.color }">
-              <span class="avatar-initials m">{{merember.initials }}</span>
+              <span class="avatar-initials m">{{member.initials }}</span>
             </div>
             
             <div class="member-info">
