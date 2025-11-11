@@ -3,7 +3,6 @@ package Entidad;
 /**
  * Este objeto almacena la información necesaria para que los datos del juego funcionen
  * el mismo comprende atributos, setters/getters y metodos de inicializacion del juego en sí.
- * @author Pablo
  */
 public class BatallaNaval {
     //Atributos:
