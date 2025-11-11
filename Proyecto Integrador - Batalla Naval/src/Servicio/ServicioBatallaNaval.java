@@ -6,7 +6,6 @@ import java.util.Scanner;
 /**
  * En esta clase se desarrolla la logica de inicialización del objeto devolviendo su valor al main.
  * además controla el desarrollo logico del juego una vez llamado.
- * @author Pablo
  */
 public class ServicioBatallaNaval {
     // Se importan objeto y Scanner
