@@ -70,7 +70,7 @@ export default {
           color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
         },
         {
-          name: 'Mandile Guido',
+          name: 'Gabriel Jauregui ',
           role: 'Desarrollador Frontend',
           description: 'Apasionado por crear experiencias web interactivas.',
           initials: 'MG',
@@ -98,8 +98,8 @@ export default {
           color: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
         },
         {
-          name: 'Velasco Pablo',
-          role: 'Desarrollador Backend',
+          name: 'Andrea Vargas ',
+          role: 'Desarrolladora Backend',
           description: 'Enfocado en optimización y rendimiento.',
           initials: 'VP',
           color: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
