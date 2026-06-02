@@ -1,12 +1,12 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar" :class="{ scrolled: isScrolled }">
     <div class="container nav-container">
-      <!-- Logo -->
       <div class="nav-logo">
-        <h2>UTN San Rafael</h2>
+        <span class="logo-main">UTN</span>
+        <span class="logo-sep">·</span>
+        <span class="logo-sub">San Rafael</span>
       </div>
-      
-      <!-- Menu Desktop -->
+
       <ul class="nav-menu" :class="{ active: isMenuOpen }">
         <li><a href="#inicio" @click="closeMenu">Inicio</a></li>
         <li><a href="#nosotros" @click="closeMenu">Nosotros</a></li>
@@ -15,8 +15,7 @@
         <li><a href="#proyectos" @click="closeMenu">Proyectos</a></li>
         <li><a href="#contacto" @click="closeMenu">Contacto</a></li>
       </ul>
-      
-      <!-- Hamburger Menu -->
+
       <div class="nav-hamburger" @click="toggleMenu" :class="{ active: isMenuOpen }">
         <span></span>
         <span></span>
@@ -36,22 +35,12 @@ export default {
     }
   },
   methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen
-    },
-    closeMenu() {
-      this.isMenuOpen = false
-    },
-    handleScroll() {
-      this.isScrolled = window.scrollY > 50
-    }
+    toggleMenu() { this.isMenuOpen = !this.isMenuOpen },
+    closeMenu() { this.isMenuOpen = false },
+    handleScroll() { this.isScrolled = window.scrollY > 60 }
   },
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll)
-  }
+  mounted() { window.addEventListener('scroll', this.handleScroll) },
+  beforeUnmount() { window.removeEventListener('scroll', this.handleScroll) }
 }
 </script>
 
@@ -61,11 +50,17 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(30, 27, 75, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.35s ease, padding 0.35s ease, box-shadow 0.35s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(13, 14, 26, 0.97);
+  backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.05);
 }
 
 .nav-container {
@@ -74,39 +69,66 @@ export default {
   align-items: center;
 }
 
-.nav-logo h2 {
-  color: white;
-  font-size: 1.5rem;
+.nav-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+.logo-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
   font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.logo-sep {
+  color: var(--gold);
+  font-size: 1.2rem;
+}
+
+.logo-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-menu li a {
-  color: white;
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
   position: relative;
-}
-
-.nav-menu li a:hover {
-  color: var(--color-accent);
+  padding-bottom: 4px;
 }
 
 .nav-menu li a::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--color-accent);
+  height: 1px;
+  background: var(--gold);
   transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #ffffff;
 }
 
 .nav-menu li a:hover::after {
@@ -117,48 +139,48 @@ export default {
   display: none;
   flex-direction: column;
   cursor: pointer;
-  gap: 5px;
+  gap: 6px;
 }
 
 .nav-hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 24px;
+  height: 1px;
   background: white;
-  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
 .nav-hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
 .nav-hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .nav-hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 @media (max-width: 768px) {
-  .nav-hamburger {
-    display: flex;
-  }
-  
+  .nav-hamburger { display: flex; }
+
   .nav-menu {
     position: fixed;
-    top: 70px;
+    top: 0;
     right: -100%;
     flex-direction: column;
-    background: rgba(30, 27, 75, 0.98);
-    width: 100%;
-    padding: 2rem;
-    transition: right 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background: var(--navy);
+    width: 280px;
+    height: 100vh;
+    padding: 6rem 2.5rem;
+    gap: 2rem;
+    transition: right 0.35s ease;
+    box-shadow: -4px 0 40px rgba(0,0,0,0.4);
   }
-  
-  .nav-menu.active {
-    right: 0;
+
+  .nav-menu.active { right: 0; }
+
+  .nav-menu li a {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.85);
   }
 }
 </style>

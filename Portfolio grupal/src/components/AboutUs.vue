@@ -1,62 +1,34 @@
 <template>
-  <section id="nosotros" class="about-section">
+  <section id="nosotros" class="about">
     <div class="container">
+      <p class="section-subtitle">Quiénes somos</p>
       <h2 class="section-title">Sobre Nosotros</h2>
-      
-      <div class="about-content">
-        <div class="about-card">
-          <div class="card-icon">🎯</div>
-          <h3>Nuestra Misión</h3>
-          <p>
-            Formarnos como profesionales en programación, adquiriendo conocimientos 
-            sólidos en desarrollo de software y preparándonos para los desafíos 
-            tecnológicos del mundo actual.
-          </p>
-        </div>
-        
-        <div class="about-card">
-          <div class="card-icon">👥</div>
-          <h3>Quiénes Somos</h3>
-          <p>
-            Somos 8 estudiantes de la Tecnicatura Universitaria en Programación 
-            de la UTN San Rafael, unidos por la pasión por la tecnología y el 
-            compromiso con el aprendizaje continuo.
-          </p>
-        </div>
-        
-        <div class="about-card">
-          <div class="card-icon">🚀</div>
-          <h3>Nuestros Objetivos</h3>
-          <p>
-            Desarrollar habilidades técnicas y blandas, trabajar en equipo, 
-            crear proyectos innovadores y contribuir al ecosistema tecnológico 
-            de nuestra región y país.
-          </p>
+      <div class="section-divider"></div>
+
+      <div class="about-cards">
+        <div class="about-card" v-for="(item, i) in cards" :key="i">
+          <div class="card-num">{{ String(i + 1).padStart(2, '0') }}</div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
         </div>
       </div>
-      
+
       <div class="about-university">
-        <h3>Universidad Tecnológica Nacional</h3>
-        <p class="university-location">Facultad Regional San Rafael - Mendoza</p>
-        <p class="university-description">
-          La UTN es una institución reconocida por su excelencia académica en carreras 
-          de ingeniería y tecnología. Nuestra Facultad Regional en San Rafael nos brinda 
-          una formación integral, combinando teoría y práctica para prepararnos como 
-          profesionales competentes en el campo de la programación y el desarrollo de software.
-        </p>
-        
+        <div class="university-text">
+          <p class="section-subtitle section-subtitle--gold">Institución</p>
+          <h3>Universidad Tecnológica Nacional</h3>
+          <p class="university-location">Facultad Regional San Rafael — Mendoza, Argentina</p>
+          <p class="university-description">
+            La UTN es reconocida por su excelencia en carreras técnicas y de ingeniería.
+            Nuestra formación combina bases teóricas sólidas con práctica real, preparándonos
+            como profesionales competentes en el desarrollo de software.
+          </p>
+        </div>
+
         <div class="university-stats">
-          <div class="stat-item">
-            <span class="stat-number">8</span>
-            <span class="stat-label">Integrantes</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">6+</span>
-            <span class="stat-label">Tecnologías</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Compromiso</span>
+          <div class="stat" v-for="(s, i) in stats" :key="i">
+            <span class="stat-num">{{ s.num }}</span>
+            <span class="stat-label">{{ s.label }}</span>
           </div>
         </div>
       </div>
@@ -66,129 +38,162 @@
 
 <script>
 export default {
-  name: 'AboutUs'
+  name: 'AboutUs',
+  data() {
+    return {
+      cards: [
+        {
+          title: 'Nuestra Misión',
+          text: 'Formarnos como profesionales en programación, adquiriendo conocimientos sólidos en desarrollo de software y preparándonos para los desafíos tecnológicos del mundo actual.'
+        },
+        {
+          title: 'Quiénes Somos',
+          text: 'Somos estudiantes de la Tecnicatura Universitaria en Programación de la UTN San Rafael, unidos por la pasión por la tecnología y el compromiso con el aprendizaje continuo.'
+        },
+        {
+          title: 'Nuestros Objetivos',
+          text: 'Desarrollar habilidades técnicas y blandas, trabajar en equipo, crear proyectos innovadores y contribuir al ecosistema tecnológico de nuestra región y país.'
+        }
+      ],
+      stats: [
+        { num: '9', label: 'Integrantes' },
+        { num: '6+', label: 'Tecnologías' },
+        { num: '100%', label: 'Compromiso' }
+      ]
+    }
+  }
 }
 </script>
 
 <style scoped>
-.about-section {
-  padding: 5rem 0;
-  background: white;
+.about {
+  padding: 7rem 0;
+  background: var(--white);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 3rem;
-  color: var(--color-dark);
+.section-subtitle--gold {
+  color: var(--gold);
 }
 
-.about-content {
+.about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 5rem;
+  overflow: hidden;
 }
 
 .about-card {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--white);
   padding: 2.5rem;
-  border-radius: 15px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  color: white;
+  transition: background 0.25s;
 }
 
 .about-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+  background: var(--cream);
 }
 
-.card-icon {
+.card-num {
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 1.25rem;
 }
 
 .about-card h3 {
-  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--navy);
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 .about-card p {
-  font-size: 1rem;
-  line-height: 1.7;
-  opacity: 0.95;
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.8;
 }
 
 .about-university {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem;
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-  border-radius: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4rem;
+  align-items: center;
+  padding: 3.5rem;
+  border: 1px solid var(--border);
+  background: var(--cream);
 }
 
-.about-university h3 {
-  font-size: 2rem;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
+.university-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
 }
 
 .university-location {
-  font-size: 1.2rem;
-  color: var(--color-secondary);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  font-weight: 500;
 }
 
 .university-description {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--text-mid);
   line-height: 1.8;
-  color: var(--color-text);
-  margin-bottom: 2rem;
+  max-width: 560px;
 }
 
 .university-stats {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
+  border-left: 1px solid var(--border);
+  padding-left: 3rem;
 }
 
-.stat-item {
+.stat {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 0.25rem;
 }
 
-.stat-number {
-  font-size: 2.5rem;
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
   font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
+  color: var(--navy);
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: 1rem;
-  color: var(--color-text-light);
-  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 @media (max-width: 768px) {
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-  
   .about-university {
-    padding: 2rem;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-  
-  .section-title {
-    font-size: 2rem;
+
+  .university-stats {
+    flex-direction: row;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+    padding-top: 2rem;
+    justify-content: space-around;
   }
 }
 </style>

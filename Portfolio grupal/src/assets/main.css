@@ -1,4 +1,3 @@
-/* Reset y estilos globales */
 * {
   margin: 0;
   padding: 0;
@@ -6,101 +5,145 @@
 }
 
 :root {
-  /* Colores principales */
-  --color-primary: #6366f1;
-  --color-secondary: #8b5cf6;
-  --color-accent: #ec4899;
-  --color-dark: #1e1b4b;
-  --color-light: #f8fafc;
-  --color-text: #334155;
-  --color-text-light: #64748b;
-  
-  /* Espaciado */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-  --spacing-3xl: 64px;
+  --navy:       #0d0e1a;
+  --navy-mid:   #161828;
+  --navy-light: #1e2035;
+  --gold:       #c9a96e;
+  --gold-light: #e2c99a;
+  --cream:      #f7f3ec;
+  --cream-dark: #ede8df;
+  --white:      #ffffff;
+  --text-dark:  #1a1a2e;
+  --text-mid:   #4a4a6a;
+  --text-muted: #8888aa;
+  --text-light: #f0ebe1;
+  --border:     #e4ddd2;
+  --border-dark: rgba(255,255,255,0.08);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: var(--color-text);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: var(--cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.25;
 }
 
 #app {
   max-width: 100%;
-  margin: 0 auto;
+  overflow-x: hidden;
 }
 
-/* Utilidades */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
+  padding: 0 2rem;
 }
 
 .section {
-  padding: var(--spacing-3xl) 0;
+  padding: 6rem 0;
 }
 
 .section-title {
+  font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: var(--spacing-2xl);
-  color: var(--color-dark);
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.section-title--light {
+  color: var(--cream);
+}
+
+.section-divider {
+  width: 48px;
+  height: 2px;
+  background: var(--gold);
+  margin: 0 auto 3.5rem;
+}
+
+.section-divider--left {
+  margin: 0 0 3.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-mid);
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.section-subtitle--light {
+  color: var(--gold-light);
 }
 
 .btn {
-  padding: var(--spacing-md) var(--spacing-xl);
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  border: 1px solid transparent;
 }
 
 .btn-primary {
-  background: var(--color-primary);
-  color: white;
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
 }
 
 .btn-primary:hover {
-  background: var(--color-secondary);
+  background: var(--gold-light);
+  border-color: var(--gold-light);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 24px rgba(201,169,110,0.25);
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border-color: rgba(255,255,255,0.4);
 }
 
-.fade-in {
-  animation: fadeIn 0.6s ease-out;
+.btn-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
 }
 
-/* Responsive */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  animation: fadeUp 0.7s ease-out forwards;
+}
+
 @media (max-width: 768px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .section {
-    padding: var(--spacing-2xl) 0;
-  }
+  .section-title { font-size: 1.9rem; }
+  .section { padding: 4rem 0; }
+  .container { padding: 0 1.25rem; }
 }

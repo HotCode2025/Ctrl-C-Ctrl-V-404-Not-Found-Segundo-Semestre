@@ -1,74 +1,49 @@
 <template>
-  <section id="habilidades" class="skills-section">
+  <section id="habilidades" class="skills">
     <div class="container">
-      <h2 class="section-title">Habilidades del Equipo</h2>
-      <p class="skills-subtitle">
-        Combinamos habilidades técnicas con competencias interpersonales
-      </p>
-      
-      <div class="skills-container">
-        <!-- Habilidades Técnicas -->
-        <div class="skills-category">
-          <h3 class="category-title">
-            <span class="category-icon">💻</span>
-            Habilidades Técnicas
-          </h3>
-          
+      <p class="section-subtitle">Nuestras capacidades</p>
+      <h2 class="section-title">Habilidades</h2>
+      <div class="section-divider"></div>
+
+      <div class="skills-layout">
+        <div class="skills-col">
+          <h3 class="col-title">Técnicas</h3>
           <div class="skills-list">
-            <div 
-              v-for="(skill, index) in technicalSkills" 
-              :key="index"
-              class="skill-item"
-            >
-              <div class="skill-header">
+            <div v-for="(skill, i) in technicalSkills" :key="i" class="skill-item">
+              <div class="skill-meta">
                 <span class="skill-name">{{ skill.name }}</span>
-                <span class="skill-percentage">{{ skill.level }}%</span>
+                <span class="skill-pct">{{ skill.level }}%</span>
               </div>
-              <div class="skill-bar">
-                <div 
-                  class="skill-progress" 
-                  :style="{ width: skill.level + '%', background: skill.color }"
-                ></div>
+              <div class="skill-track">
+                <div class="skill-fill" :style="{ width: skill.level + '%' }"></div>
               </div>
             </div>
           </div>
         </div>
-        
-        <!-- Habilidades Blandas -->
-        <div class="skills-category">
-          <h3 class="category-title">
-            <span class="category-icon">🤝</span>
-            Habilidades Blandas
-          </h3>
-          
-          <div class="soft-skills-grid">
-            <div 
-              v-for="(skill, index) in softSkills" 
-              :key="index"
-              class="soft-skill-card"
-            >
-              <div class="soft-skill-icon" :style="{ background: skill.color }">
-                {{ skill.icon }}
+
+        <div class="skills-col">
+          <h3 class="col-title">Blandas</h3>
+          <div class="soft-grid">
+            <div v-for="(skill, i) in softSkills" :key="i" class="soft-card">
+              <div class="soft-dot"></div>
+              <div>
+                <h4>{{ skill.name }}</h4>
+                <p>{{ skill.description }}</p>
               </div>
-              <h4>{{ skill.name }}</h4>
-              <p>{{ skill.description }}</p>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Certificaciones y Logros -->
+
       <div class="achievements">
-        <h3 class="achievements-title">Certificaciones y Logros</h3>
-        <div class="achievements-grid">
-          <div 
-            v-for="(achievement, index) in achievements" 
-            :key="index"
-            class="achievement-card"
-          >
-            <div class="achievement-badge">{{ achievement.icon }}</div>
-            <h4>{{ achievement.title }}</h4>
-            <p>{{ achievement.description }}</p>
+        <p class="section-subtitle section-subtitle--light">Trayectoria</p>
+        <h3 class="achievements-title">Logros del Equipo</h3>
+        <div class="section-divider"></div>
+        <div class="ach-grid">
+          <div v-for="(a, i) in achievements" :key="i" class="ach-card">
+            <span class="ach-num">{{ String(i+1).padStart(2,'0') }}</span>
+            <h4>{{ a.title }}</h4>
+            <p>{{ a.description }}</p>
           </div>
         </div>
       </div>
@@ -82,96 +57,26 @@ export default {
   data() {
     return {
       technicalSkills: [
-        {
-          name: 'Programación Orientada a Objetos',
-          level: 85,
-          color: 'linear-gradient(90deg, #667eea 0%, #764ba2 100%)'
-        },
-        {
-          name: 'Desarrollo Web (Frontend & Backend)',
-          level: 80,
-          color: 'linear-gradient(90deg, #f093fb 0%, #f5576c 100%)'
-        },
-        {
-          name: 'Bases de Datos SQL',
-          level: 75,
-          color: 'linear-gradient(90deg, #4facfe 0%, #00f2fe 100%)'
-        },
-        {
-          name: 'Control de Versiones (Git)',
-          level: 85,
-          color: 'linear-gradient(90deg, #43e97b 0%, #38f9d7 100%)'
-        },
-        {
-          name: 'Algoritmos y Estructuras de Datos',
-          level: 70,
-          color: 'linear-gradient(90deg, #fa709a 0%, #fee140 100%)'
-        },
-        {
-          name: 'APIs REST y Servicios Web',
-          level: 75,
-          color: 'linear-gradient(90deg, #30cfd0 0%, #330867 100%)'
-        }
+        { name: 'Programación Orientada a Objetos',    level: 85 },
+        { name: 'Desarrollo Web (Frontend & Backend)', level: 80 },
+        { name: 'Bases de Datos SQL',                  level: 75 },
+        { name: 'Control de Versiones (Git)',          level: 85 },
+        { name: 'Algoritmos y Estructuras de Datos',  level: 70 },
+        { name: 'APIs REST y Servicios Web',           level: 75 }
       ],
       softSkills: [
-        {
-          name: 'Trabajo en Equipo',
-          icon: '👥',
-          description: 'Colaboración efectiva en proyectos grupales',
-          color: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-        },
-        {
-          name: 'Comunicación',
-          icon: '💬',
-          description: 'Expresión clara de ideas técnicas',
-          color: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
-        },
-        {
-          name: 'Resolución de Problemas',
-          icon: '🧩',
-          description: 'Análisis y solución de desafíos complejos',
-          color: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
-        },
-        {
-          name: 'Aprendizaje Continuo',
-          icon: '📚',
-          description: 'Adaptación a nuevas tecnologías',
-          color: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
-        },
-        {
-          name: 'Pensamiento Crítico',
-          icon: '🎯',
-          description: 'Evaluación objetiva de soluciones',
-          color: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
-        },
-        {
-          name: 'Gestión del Tiempo',
-          icon: '⏰',
-          description: 'Organización y cumplimiento de plazos',
-          color: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)'
-        }
+        { name: 'Trabajo en Equipo',       description: 'Colaboración efectiva en proyectos grupales'   },
+        { name: 'Comunicación',            description: 'Expresión clara de ideas técnicas'              },
+        { name: 'Resolución de Problemas', description: 'Análisis y solución de desafíos complejos'     },
+        { name: 'Aprendizaje Continuo',    description: 'Adaptación constante a nuevas tecnologías'     },
+        { name: 'Pensamiento Crítico',     description: 'Evaluación objetiva de distintas soluciones'   },
+        { name: 'Gestión del Tiempo',      description: 'Organización y cumplimiento de plazos'         }
       ],
       achievements: [
-        {
-          icon: '🏆',
-          title: 'Proyectos Completados',
-          description: 'Múltiples proyectos académicos finalizados exitosamente'
-        },
-        {
-          icon: '📜',
-          title: 'Cursando Tecnicatura',
-          description: 'Estudiantes activos en UTN San Rafael'
-        },
-        {
-          icon: '🚀',
-          title: 'Trabajo Colaborativo',
-          description: 'Experiencia en desarrollo con metodologías ágiles'
-        },
-        {
-          icon: '💡',
-          title: 'Innovación',
-          description: 'Implementación de soluciones creativas'
-        }
+        { title: 'Proyectos Completados', description: 'Múltiples proyectos académicos finalizados exitosamente' },
+        { title: 'Cursando Tecnicatura',  description: 'Estudiantes activos en UTN San Rafael'                   },
+        { title: 'Trabajo Colaborativo',  description: 'Experiencia con metodologías ágiles y Git flow'          },
+        { title: 'Innovación',            description: 'Implementación de soluciones creativas y modernas'       }
       ]
     }
   }
@@ -179,50 +84,27 @@ export default {
 </script>
 
 <style scoped>
-.skills-section {
-  padding: 5rem 0;
-  background: white;
+.skills {
+  padding: 7rem 0;
+  background: var(--white);
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--color-dark);
-}
-
-.skills-subtitle {
-  text-align: center;
-  font-size: 1.1rem;
-  color: var(--color-text-light);
-  margin-bottom: 3rem;
-}
-
-.skills-container {
+.skills-layout {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 }
 
-.skills-category {
-  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-  padding: 3rem;
-  border-radius: 20px;
-}
-
-.category-title {
-  font-size: 1.8rem;
-  color: var(--color-dark);
+.col-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
   margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.category-icon {
-  font-size: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.02em;
 }
 
 .skills-list {
@@ -231,142 +113,149 @@ export default {
   gap: 1.5rem;
 }
 
-.skill-item {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
+.skill-item {}
 
-.skill-header {
+.skill-meta {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
-}
-
-.skill-name {
-  font-weight: 600;
-  color: var(--color-dark);
-  font-size: 1.05rem;
-}
-
-.skill-percentage {
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.skill-bar {
-  height: 10px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.skill-progress {
-  height: 100%;
-  border-radius: 10px;
-  transition: width 1.5s ease;
-}
-
-.soft-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.soft-skill-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.soft-skill-card:hover {
-  transform: translateY(-5px);
-}
-
-.soft-skill-icon {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin: 0 auto 1rem;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.soft-skill-card h4 {
-  font-size: 1.2rem;
-  color: var(--color-dark);
   margin-bottom: 0.5rem;
 }
 
-.soft-skill-card p {
+.skill-name {
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
+.skill-pct {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.skill-track {
+  height: 2px;
+  background: var(--border);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 1px;
+  transition: width 1.2s ease;
+}
+
+.soft-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.soft-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  background: var(--cream);
+  transition: border-color 0.2s;
+}
+
+.soft-card:hover {
+  border-color: var(--gold);
+}
+
+.soft-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+.soft-card h4 {
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
-  color: var(--color-text-light);
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.soft-card p {
+  font-size: 0.825rem;
+  color: var(--text-mid);
   line-height: 1.6;
 }
 
 .achievements {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--navy);
   padding: 4rem;
-  border-radius: 20px;
-  color: white;
+  text-align: center;
+}
+
+.section-subtitle--light {
+  color: var(--gold);
 }
 
 .achievements-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
 }
 
-.achievements-grid {
+.ach-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  overflow: hidden;
+  margin-top: 0.5rem;
 }
 
-.achievement-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+.ach-card {
+  background: var(--navy-mid);
   padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  transition: all 0.3s ease;
+  text-align: left;
+  transition: background 0.25s;
 }
 
-.achievement-card:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
+.ach-card:hover {
+  background: var(--navy-light);
 }
 
-.achievement-badge {
-  font-size: 3rem;
+.ach-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  opacity: 0.3;
+  display: block;
+  line-height: 1;
   margin-bottom: 1rem;
 }
 
-.achievement-card h4 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+.ach-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-.achievement-card p {
-  font-size: 0.95rem;
-  opacity: 0.9;
+.ach-card p {
+  font-size: 0.825rem;
+  color: rgba(240,235,225,0.55);
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-  .skills-category {
-    padding: 2rem;
-  }
-  
-  .soft-skills-grid,
-  .achievements-grid {
-    grid-template-columns: 1fr;
-  }
+  .skills-layout { grid-template-columns: 1fr; gap: 3rem; }
+  .achievements { padding: 3rem 1.5rem; }
+  .ach-grid { grid-template-columns: 1fr; }
 }
 </style>
